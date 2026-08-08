@@ -6,7 +6,7 @@ const description =
   "I build stablecoin and AI products, and the developer ecosystems around them. Product & Developer Relations at MOI Protocol (Sarva Labs).";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adithya-site.vercel.app"),
+  metadataBase: new URL("https://adithya-site-orpin.vercel.app"),
   title: "Adithya Ganesh",
   description,
   openGraph: {
