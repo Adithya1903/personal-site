@@ -1,18 +1,21 @@
-# Personal Site Build - Handoff Plan
+# Personal Site Build - Plan & Status
 
-Branch: `claude/adithya-personal-site-6aad18`. Continue the build from this doc.
+This repo (`Adithya1903/personal-site`) IS the site; the app lives at the repo root. Originally scaffolded inside the stablecoin-montecarlo repo, since moved here.
 
 ## Status
 
-- [x] Fetched the `design-taste-frontend` (taste-skill) design skill; committed at `.claude/skills/design-taste-frontend/SKILL.md`. **Read it before writing any UI code.**
-- [ ] Everything else. No site code written yet.
+- [x] `design-taste-frontend` design skill at `.claude/skills/design-taste-frontend/SKILL.md`. **Read it before touching any UI code.**
+- [x] Site built: single static route, all copy in `content.ts`, dark mode via `prefers-color-scheme`, CSS-only fade-up, OG/Twitter meta, favicon. Build + lint clean, 87 kB first load.
+- [x] Deployed: Vercel project `adithya-site`, production URL https://adithya-site-orpin.vercel.app (the clean adithya-site.vercel.app was taken globally). GitHub repo connected to Vercel: every push to `main` auto-deploys production; other branches get previews.
+- [x] Reviewed desktop + mobile + dark mode against the taste skill's Pre-Flight Check; all six projects, research, and about render with correct facts and attribution.
+- [ ] Fill `PAPER_LINKS` in `content.ts` when the papers have public URLs.
+- [ ] Optional polish: custom domain (then update `metadataBase` in `app/layout.tsx`), a real OG image, real screenshots of the live projects (launchpad.moi.technology, stablecointools.org) inside their case studies. Per the taste skill: real screenshots only, never div-based fakes.
 
 ## Key decisions already made
 
-1. **Do not touch the simulator app.** This repo's root is the stablecoin-montecarlo app (deployed as Vercel project `scmc`). Build the personal site as a self-contained project in a **`personal-site/` subdirectory** with its own `package.json`. It can later be moved to its own repo, or deployed by pointing a new Vercel project's Root Directory at `personal-site/`.
-2. Stack: Next.js (App Router) + Tailwind + TypeScript, single route `/`. All copy in one typed `content.ts`.
-3. Static, fast (Lighthouse 95+), responsive, accessible. Dark mode via `prefers-color-scheme` only, no toggle.
-4. SEO: title/description, Open Graph + Twitter meta, favicon. `npm run build` (inside `personal-site/`) must pass clean.
+1. Stack: Next.js (App Router) + Tailwind + TypeScript, single route `/`. All copy in one typed `content.ts`.
+2. Static, fast (Lighthouse 95+), responsive, accessible. Dark mode via `prefers-color-scheme` only, no toggle. Geist via the `geist` package.
+3. SEO: title/description, Open Graph + Twitter meta, favicon. `npm run build` must pass clean before shipping.
 
 ## Design spec (from the brief; the taste skill governs everything else)
 
