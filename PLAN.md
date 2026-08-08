@@ -8,8 +8,9 @@ This repo (`Adithya1903/personal-site`) IS the site; the app lives at the repo r
 - [x] Site built: single static route, all copy in `content.ts`, dark mode via `prefers-color-scheme`, CSS-only fade-up, OG/Twitter meta, favicon. Build + lint clean, 87 kB first load.
 - [x] Deployed: Vercel project `adithya-site`, production URL https://adithya-site-orpin.vercel.app (the clean adithya-site.vercel.app was taken globally). GitHub repo connected to Vercel: every push to `main` auto-deploys production; other branches get previews.
 - [x] Reviewed desktop + mobile + dark mode against the taste skill's Pre-Flight Check; all six projects, research, and about render with correct facts and attribution.
+- [x] Real OG image: `app/opengraph-image.tsx` renders a 1200x630 card at build time (Geist from node_modules, site palette, single green accent). Twitter card upgraded to `summary_large_image`.
 - [ ] Fill `PAPER_LINKS` in `content.ts` when the papers have public URLs.
-- [ ] Optional polish: custom domain (then update `metadataBase` in `app/layout.tsx`), a real OG image, real screenshots of the live projects (launchpad.moi.technology, stablecointools.org) inside their case studies. Per the taste skill: real screenshots only, never div-based fakes.
+- [ ] Optional polish: custom domain (then update `metadataBase` in `app/layout.tsx`), real screenshots of the live projects (launchpad.moi.technology, stablecointools.org) inside their case studies. Per the taste skill: real screenshots only, never div-based fakes. Note: the remote sandbox's network policy blocks those hosts, so the screenshots need to be captured from a normal machine (or provided) and dropped into `public/`.
 
 ## Key decisions already made
 
