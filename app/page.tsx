@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+import Image from "next/image";
 import {
   identity,
   links,
@@ -7,6 +10,12 @@ import {
   about,
   PAPER_LINKS,
 } from "@/content";
+
+// Rendered only once the portrait exists, so the repo builds and deploys
+// cleanly before the photo is added. Drop the image at public/adithya.jpg.
+const hasPortrait = fs.existsSync(
+  path.join(process.cwd(), "public", "adithya.jpg"),
+);
 
 function ExternalLink({
   href,
@@ -64,12 +73,27 @@ export default function Home() {
       <main id="main" className="mx-auto max-w-2xl px-6">
         {/* Intro */}
         <section id="top" className="pb-16 pt-32 sm:pt-36">
-          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            {identity.name}
-          </h1>
-          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-            {identity.tagline}
-          </p>
+          <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+                {identity.name}
+              </h1>
+              <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
+                {identity.tagline}
+              </p>
+            </div>
+            {hasPortrait && (
+              <Image
+                src="/adithya.jpg"
+                alt={identity.name}
+                width={400}
+                height={400}
+                priority
+                className="h-28 w-28 shrink-0 object-cover sm:h-36 sm:w-36"
+              />
+            )}
+          </div>
+
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm">
             {links.map((link) => (
               <li key={link.label}>
