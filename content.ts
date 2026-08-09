@@ -41,6 +41,7 @@ export const links: SiteLink[] = [
 export const nav: SiteLink[] = [
   { label: "Projects", href: "#projects" },
   { label: "Research", href: "#research" },
+  { label: "Talks", href: "#talks" },
   { label: "About", href: "#about" },
 ];
 
@@ -143,6 +144,18 @@ export const PAPER_LINKS: Record<string, string | null> = {
   "Rho Neutral Yield Enhancement with Synthetic Positions": null,
   "Gamma Neutral Calendar Spread": null,
   "Theta Neutral Iron Condor": null,
+};
+
+export const talks = {
+  blurb:
+    "I run weekly dev talks and an 11-part community call series (1,500+ cumulative views) on the MOI Technology channel.",
+  /** The channel's all-uploads playlist (UU + channel id). Swap in a
+      dedicated dev-talks playlist ID to narrow what the embed shows. */
+  playlistId: "UUit7h30bhrwxBd1Yt_bmPvg",
+  channel: {
+    label: "MOI Technology on YouTube",
+    href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
+  },
 };
 
 export const about: string[] = [

@@ -10,6 +10,7 @@ import {
   about,
   PAPER_LINKS,
   SITE_URL,
+  talks,
 } from "@/content";
 
 const jsonLd = [
@@ -194,6 +195,28 @@ export default function Home() {
               );
             })}
           </ul>
+        </section>
+
+        {/* Talks */}
+        <section id="talks" className="fade-up border-t border-zinc-200 py-16 dark:border-zinc-800">
+          <h2 className="text-2xl font-semibold tracking-tight">Talks</h2>
+          <p className="mt-6 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-300">
+            {talks.blurb}
+          </p>
+          <div className="mt-6 aspect-video w-full border border-zinc-200 dark:border-zinc-800">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/videoseries?list=${talks.playlistId}`}
+              title="Dev talks and community calls"
+              loading="lazy"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="h-full w-full"
+            />
+          </div>
+          <p className="mt-4 text-sm">
+            <ExternalLink href={talks.channel.href}>{talks.channel.label}</ExternalLink>
+          </p>
         </section>
 
         {/* About */}
