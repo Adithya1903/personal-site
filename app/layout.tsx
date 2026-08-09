@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
+import { SITE_URL } from "@/content";
 import "./globals.css";
 
 const description =
   "I build stablecoin and AI products, and the developer ecosystems around them. Product & Developer Relations at MOI Protocol (Sarva Labs).";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://adithya-site-orpin.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "Adithya Ganesh",
   description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Adithya Ganesh",
     description,

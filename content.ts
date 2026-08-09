@@ -21,6 +21,8 @@ export type Paper = {
   note: string;
 };
 
+export const SITE_URL = "https://adithya-site-orpin.vercel.app";
+
 export const identity = {
   name: "Adithya Ganesh",
   tagline:

@@ -9,7 +9,29 @@ import {
   research,
   about,
   PAPER_LINKS,
+  SITE_URL,
 } from "@/content";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: identity.name,
+    url: SITE_URL,
+    jobTitle: "Product & Developer Relations",
+    affiliation: { "@type": "Organization", name: "Sarva Labs" },
+    sameAs: links
+      .filter((l) => l.href.startsWith("http"))
+      .map((l) => l.href),
+    knowsAbout: ["stablecoins", "AI agents", "developer relations"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: identity.name,
+    url: SITE_URL,
+  },
+];
 
 // Rendered only once the portrait exists, so the repo builds and deploys
 // cleanly before the photo is added. Drop the image at public/adithya.jpg.
@@ -41,6 +63,10 @@ function ExternalLink({
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-zinc-50 focus:px-3 focus:py-2 dark:focus:bg-zinc-950"
