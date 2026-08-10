@@ -116,7 +116,7 @@ export default function Home() {
                 width={400}
                 height={400}
                 priority
-                className="h-28 w-28 shrink-0 object-cover sm:h-36 sm:w-36"
+                className="h-28 w-28 shrink-0 object-cover object-top sm:h-36 sm:w-36"
               />
             )}
           </div>
