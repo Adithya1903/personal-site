@@ -114,9 +114,9 @@ export default function Home() {
                 src="/adithya.jpg"
                 alt={identity.name}
                 width={800}
-                height={800}
+                height={1200}
                 priority
-                className="h-28 w-28 shrink-0 object-cover sm:h-36 sm:w-36"
+                className="w-40 shrink-0 sm:w-48"
               />
             )}
           </div>
