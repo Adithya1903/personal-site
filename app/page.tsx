@@ -113,10 +113,10 @@ export default function Home() {
               <Image
                 src="/adithya.jpg"
                 alt={identity.name}
-                width={400}
-                height={400}
+                width={800}
+                height={800}
                 priority
-                className="h-28 w-28 shrink-0 object-cover object-top sm:h-36 sm:w-36"
+                className="h-28 w-28 shrink-0 object-cover sm:h-36 sm:w-36"
               />
             )}
           </div>
