@@ -168,7 +168,7 @@ export const hackathons = {
       meta: "Buidl \u00b7 Boiler Blockchain \u00b7 DoraHacks",
       blurb:
         "Decentralized event reservations with tiered ERC-1155 NFT ticketing on Polygon: auctions, buy-now, and no intermediaries between event owners and buyers. Built the ReactJS front end and helped ship the contracts.",
-      href: null,
+      href: "https://dorahacks.io/buidl/4274/",
     },
     {
       id: "hack-moi",
