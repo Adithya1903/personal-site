@@ -330,6 +330,22 @@ export const writing = {
     "Papers, specs, and the documentation I wrote for MOI. Five of the papers are sole-authored work on stablecoin collateral risk and options-based hedging.",
   items: [
     {
+      id: "voyage-wallet-migration",
+      title: "How to Move Your Voyage Login to MOI Wallet",
+      meta: "Article \u00b7 MOI Blog \u00b7 2026",
+      blurb:
+        "Voyage now signs you in with MOI Wallet. Import the seed phrase you already use and your account, history, and settings come with you.",
+      href: "https://blog.moi.technology/article/move-your-voyage-login-to-moi-wallet/",
+    },
+    {
+      id: "august-2026-release",
+      title: "MOI August 2026 Release",
+      meta: "Article \u00b7 MOI Blog \u00b7 2026",
+      blurb:
+        "Storage costing and access control: state is bought up front as a storage grant, and foreign writes need a policy you publish.",
+      href: "https://blog.moi.technology/article/moi-august-2026-release/",
+    },
+    {
       id: "webinars-vii",
       title: "How AI Agents Pay Each Other",
       meta: "Article · MOI Blog · 2026",
