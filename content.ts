@@ -16,9 +16,15 @@ export type Project = {
   links: SiteLink[];
 };
 
-export type Paper = {
+/** A card in a swipeable row (Talks, Writing). `href: null` renders the card
+    unlinked, so an item can go up before its public URL exists. */
+export type CardItem = {
+  id: string;
   title: string;
-  note: string;
+  /** Single metadata line: kind, venue, year. */
+  meta: string;
+  blurb: string;
+  href: string | null;
 };
 
 export const SITE_URL = "https://adithya-site-orpin.vercel.app";
@@ -45,8 +51,8 @@ export const links: SiteLink[] = [
 
 export const nav: SiteLink[] = [
   { label: "Projects", href: "#projects" },
-  { label: "Research", href: "#research" },
   { label: "Talks", href: "#talks" },
+  { label: "Writing", href: "#writing" },
   { label: "About", href: "#about" },
 ];
 
@@ -129,38 +135,136 @@ export const projects: Project[] = [
   },
 ];
 
-export const research = {
-  whitePaper:
-    "White paper (co-author, BIMA Labs, 2024): stablecoin risk mitigation and capital-allocation guidance, built on a framework evaluating 70+ stablecoin, LST, and LRT protocols across collateral, peg mechanics, and liquidation logic, with Python and R hedging simulations.",
-  papersIntro: "Five papers, sole author:",
-  papers: [
-    { title: "Delta & Gamma Neutral Collar Strategy", note: "downside risk in stablecoin reserves" },
-    { title: "Theta & Vega Neutral Butterfly Spread", note: "yield curves under varying volatility" },
-    { title: "Rho Neutral Yield Enhancement with Synthetic Positions", note: "rate arbitrage in DeFi" },
-    { title: "Gamma Neutral Calendar Spread", note: "long-term volatility in collateralized portfolios" },
-    { title: "Theta Neutral Iron Condor", note: "hedging AMM impermanent loss" },
-  ] satisfies Paper[],
-};
-
-// Fill these in when the papers have public links; keys match paper titles.
-export const PAPER_LINKS: Record<string, string | null> = {
-  "Delta & Gamma Neutral Collar Strategy": null,
-  "Theta & Vega Neutral Butterfly Spread": null,
-  "Rho Neutral Yield Enhancement with Synthetic Positions": null,
-  "Gamma Neutral Calendar Spread": null,
-  "Theta Neutral Iron Condor": null,
-};
-
 export const talks = {
   blurb:
-    "I run weekly dev talks and an 11-part community call series (1,500+ cumulative views) on the MOI Technology channel.",
-  /** The channel's all-uploads playlist (UU + channel id). Swap in a
-      dedicated dev-talks playlist ID to narrow what the embed shows. */
-  playlistId: "UUit7h30bhrwxBd1Yt_bmPvg",
+    "Events, webinars, and community calls. I run weekly dev talks and an 11-part community call series (1,500+ cumulative views) on the MOI Technology channel.",
   channel: {
     label: "MOI Technology on YouTube",
     href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
   },
+  items: [
+    {
+      id: "community-calls",
+      title: "MOI Community Calls",
+      meta: "Webinar series · MOI Technology · 11 parts",
+      blurb:
+        "A recurring call walking the community through what shipped, what is next, and what the protocol looks like up close. 1,500+ cumulative views.",
+      href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
+    },
+    {
+      id: "dev-talks",
+      title: "Weekly Dev Talks",
+      meta: "Webinar · MOI Technology · ongoing",
+      blurb:
+        "A standing weekly session for developers building on MOI, run live and published to the channel.",
+      href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
+    },
+    {
+      id: "moi-hackathon",
+      title: "MOI Hackathon",
+      meta: "Event · 120 participants",
+      blurb:
+        "Ran the event end to end, and fed what builders hit during it back into the product roadmap.",
+      href: null,
+    },
+    {
+      id: "solidity-course",
+      title: "12-Week Solidity Course",
+      meta: "Course · Boiler Blockchain, Purdue",
+      blurb:
+        "Designed and taught a technical curriculum to 100+ students, from first contract to deployment.",
+      href: null,
+    },
+    {
+      id: "ethdenver-2023",
+      title: "ETH Denver 2023",
+      meta: "Hackathon · 0x bounty winner",
+      blurb:
+        "Built and shipped LiquidEase over the event: single-sided liquidity provision routed through the 0x aggregator.",
+      href: null,
+    },
+    {
+      id: "ethsf-2022",
+      title: "ETHSanFrancisco 2022",
+      meta: "Hackathon · Triangle Best Social Use winner",
+      blurb: "Won the Triangle Best Social Use prize.",
+      href: null,
+    },
+  ] satisfies CardItem[],
+};
+
+export const writing = {
+  blurb:
+    "Papers, specs, and the documentation I wrote for MOI. Five of the papers are sole-authored work on stablecoin collateral risk and options-based hedging.",
+  items: [
+    {
+      id: "bima-white-paper",
+      title: "Stablecoin Risk Mitigation White Paper",
+      meta: "White paper · co-author, BIMA Labs · 2024",
+      blurb:
+        "Capital-allocation guidance built on a framework evaluating 70+ stablecoin, LST, and LRT protocols across collateral, peg mechanics, and liquidation logic, with Python and R hedging simulations.",
+      href: null,
+    },
+    {
+      id: "stiff-spec",
+      title: "STiFF Enterprise Stablecoin Spec",
+      meta: "Spec · co-author, MOI",
+      blurb:
+        "Branded stablecoin issuance and settlement at 80-90% lower cost than card networks.",
+      href: null,
+    },
+    {
+      id: "coco-docs",
+      title: "Coco Language Documentation",
+      meta: "Documentation · MOI · ~50 pages",
+      blurb:
+        "Core documentation for Coco, MOI's smart contract language, written alongside the protocol architecture docs.",
+      href: "https://cocolang.dev",
+    },
+    {
+      id: "moi-docs",
+      title: "MOI Protocol Documentation",
+      meta: "Documentation · MOI",
+      blurb:
+        "Protocol architecture documentation, the reference the developer on-ramp is built around.",
+      href: "https://docs.moi.technology",
+    },
+    {
+      id: "paper-collar",
+      title: "Delta & Gamma Neutral Collar Strategy",
+      meta: "Paper · sole author",
+      blurb: "Downside risk in stablecoin reserves.",
+      href: null,
+    },
+    {
+      id: "paper-butterfly",
+      title: "Theta & Vega Neutral Butterfly Spread",
+      meta: "Paper · sole author",
+      blurb: "Yield curves under varying volatility.",
+      href: null,
+    },
+    {
+      id: "paper-rho",
+      title: "Rho Neutral Yield Enhancement with Synthetic Positions",
+      meta: "Paper · sole author",
+      blurb: "Rate arbitrage in DeFi.",
+      href: null,
+    },
+    {
+      id: "paper-calendar",
+      title: "Gamma Neutral Calendar Spread",
+      meta: "Paper · sole author",
+      blurb: "Long-term volatility in collateralized portfolios.",
+      href: null,
+    },
+    {
+      id: "paper-condor",
+      title: "Theta Neutral Iron Condor",
+      meta: "Paper · sole author",
+      blurb: "Hedging AMM impermanent loss.",
+      href: null,
+    },
+  ] satisfies CardItem[],
 };
 
 export const about: string[] = [

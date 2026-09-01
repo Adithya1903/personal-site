@@ -55,3 +55,13 @@ article[id] {
     transform: none;
   }
 }
+
+/* Swipe rows: hide the horizontal scrollbar without losing the scroll itself.
+   The arrow buttons and native touch swipe are the affordance instead. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}

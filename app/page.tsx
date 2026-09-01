@@ -1,16 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import Image from "next/image";
+import Carousel from "./Carousel";
 import {
   identity,
   links,
   nav,
   projects,
-  research,
   about,
-  PAPER_LINKS,
   SITE_URL,
   talks,
+  writing,
 } from "@/content";
 
 const jsonLd = [
@@ -171,54 +171,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Research */}
-        <section id="research" className="fade-up border-t border-zinc-200 py-16 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight">Research</h2>
-          <p className="mt-6 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-300">
-            {research.whitePaper}
-          </p>
-          <p className="mt-6 text-sm text-zinc-500 dark:text-zinc-400">
-            {research.papersIntro}
-          </p>
-          <ul className="mt-3 space-y-2 text-[15px] leading-relaxed">
-            {research.papers.map((paper) => {
-              const href = PAPER_LINKS[paper.title];
-              return (
-                <li key={paper.title}>
-                  {href ? (
-                    <ExternalLink href={href} className="font-medium">
-                      {paper.title}
-                    </ExternalLink>
-                  ) : (
-                    <span className="font-medium">{paper.title}</span>
-                  )}
-                  <span className="text-zinc-500 dark:text-zinc-400"> · {paper.note}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-
         {/* Talks */}
         <section id="talks" className="fade-up border-t border-zinc-200 py-16 dark:border-zinc-800">
           <h2 className="text-2xl font-semibold tracking-tight">Talks</h2>
           <p className="mt-6 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-300">
             {talks.blurb}
           </p>
-          <div className="mt-6 aspect-video w-full border border-zinc-200 dark:border-zinc-800">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/videoseries?list=${talks.playlistId}`}
-              title="Dev talks and community calls"
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              referrerPolicy="strict-origin-when-cross-origin"
-              className="h-full w-full"
-            />
-          </div>
+          <Carousel items={talks.items} label="Talks, events, and webinars" />
           <p className="mt-4 text-sm">
             <ExternalLink href={talks.channel.href}>{talks.channel.label}</ExternalLink>
           </p>
+        </section>
+
+        {/* Writing */}
+        <section id="writing" className="fade-up border-t border-zinc-200 py-16 dark:border-zinc-800">
+          <h2 className="text-2xl font-semibold tracking-tight">Writing</h2>
+          <p className="mt-6 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-300">
+            {writing.blurb}
+          </p>
+          <Carousel items={writing.items} label="Papers, specs, and documentation" />
         </section>
 
         {/* About */}

@@ -2,7 +2,7 @@
 
 One-page personal site. Next.js (App Router) + Tailwind + TypeScript, fully static.
 
-All copy lives in [`content.ts`](content.ts). Edit facts there (including the empty `PAPER_LINKS`) without touching components. `PLAN.md` has the full original brief and the remaining polish checklist; the design rules are in `.claude/skills/design-taste-frontend/SKILL.md`.
+All copy lives in [`content.ts`](content.ts). Edit facts there without touching components. Talks and Writing entries are `CardItem`s: set `href` to `null` and the card renders unlinked until a public URL exists. `PLAN.md` has the full original brief and the remaining polish checklist; the design rules are in `.claude/skills/design-taste-frontend/SKILL.md`.
 
 ## Develop
 
