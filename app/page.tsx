@@ -9,6 +9,7 @@ import {
   projects,
   about,
   SITE_URL,
+  hackathons,
   talks,
   writing,
 } from "@/content";
@@ -169,6 +170,15 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        {/* Hackathons */}
+        <section id="hackathons" className="fade-up border-t border-zinc-200 py-16 dark:border-zinc-800">
+          <h2 className="text-2xl font-semibold tracking-tight">Hackathons</h2>
+          <p className="mt-6 text-[15px] leading-relaxed text-zinc-700 dark:text-zinc-300">
+            {hackathons.blurb}
+          </p>
+          <Carousel items={hackathons.items} label="Hackathons" />
         </section>
 
         {/* Talks */}

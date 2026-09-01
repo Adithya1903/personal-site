@@ -172,7 +172,11 @@ export default function Carousel({
                 </p>
                 {item.href && (
                   <span className="mt-4 text-xs text-accent group-hover:underline">
-                    {videoId ? "Watch" : "Open"}
+                    {videoId
+                      ? "Watch"
+                      : item.href.startsWith("#")
+                        ? "See project"
+                        : "Open"}
                   </span>
                 )}
               </div>
@@ -184,8 +188,11 @@ export default function Carousel({
               {item.href ? (
                 <a
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  // Anchor links ("#liquidease") stay in the page; everything
+                  // else opens in its own tab.
+                  {...(item.href.startsWith("#")
+                    ? {}
+                    : { target: "_blank", rel: "noopener noreferrer" })}
                   className="group flex h-full flex-col border border-zinc-200 transition-colors hover:border-accent dark:border-zinc-800"
                 >
                   {inner}

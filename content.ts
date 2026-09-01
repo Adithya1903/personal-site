@@ -55,6 +55,7 @@ export const links: SiteLink[] = [
 
 export const nav: SiteLink[] = [
   { label: "Projects", href: "#projects" },
+  { label: "Hackathons", href: "#hackathons" },
   { label: "Talks", href: "#talks" },
   { label: "Writing", href: "#writing" },
   { label: "About", href: "#about" },
@@ -138,6 +139,36 @@ export const projects: Project[] = [
     links: [],
   },
 ];
+
+export const hackathons = {
+  blurb:
+    "Two wins as a builder, one 120-person event as the organizer.",
+  items: [
+    {
+      id: "hack-ethdenver-2023",
+      title: "ETH Denver 2023",
+      meta: "Builder \u00b7 0x bounty winner",
+      blurb:
+        "Built and shipped LiquidEase over the event: single-sided liquidity provision, with a smart contract routing optimal swaps through the 0x aggregator. Won the 0x bounty.",
+      href: "#liquidease",
+    },
+    {
+      id: "hack-ethsf-2022",
+      title: "ETHSanFrancisco 2022",
+      meta: "Builder \u00b7 Triangle Best Social Use winner",
+      blurb: "Won the Triangle Best Social Use prize.",
+      href: null,
+    },
+    {
+      id: "hack-moi",
+      title: "MOI Hackathon",
+      meta: "Organizer \u00b7 Sarva Labs \u00b7 120 participants",
+      blurb:
+        "Ran the event end to end, and fed what builders hit during it back into the product roadmap.",
+      href: null,
+    },
+  ] satisfies CardItem[],
+};
 
 export const talks = {
   blurb:
@@ -274,31 +305,10 @@ export const talks = {
       href: "https://www.youtube.com/watch?v=3n1JNxSP0xA",
     },
     {
-      id: "moi-hackathon",
-      title: "MOI Hackathon",
-      meta: "Event · 120 participants",
-      blurb: "Ran the event end to end, and fed what builders hit during it back into the product roadmap.",
-      href: null,
-    },
-    {
       id: "solidity-course",
       title: "12-Week Solidity Course",
       meta: "Course · Boiler Blockchain, Purdue",
       blurb: "Designed and taught a technical curriculum to 100+ students, from first contract to deployment.",
-      href: null,
-    },
-    {
-      id: "ethdenver-2023",
-      title: "ETH Denver 2023",
-      meta: "Hackathon · 0x bounty winner",
-      blurb: "Built and shipped LiquidEase over the event: single-sided liquidity provision routed through the 0x aggregator.",
-      href: null,
-    },
-    {
-      id: "ethsf-2022",
-      title: "ETHSanFrancisco 2022",
-      meta: "Hackathon · Triangle Best Social Use winner",
-      blurb: "Won the Triangle Best Social Use prize.",
       href: null,
     },
   ] satisfies CardItem[],
