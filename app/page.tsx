@@ -49,7 +49,9 @@ function ExternalLink({
   children: React.ReactNode;
   className?: string;
 }) {
-  const external = href.startsWith("http");
+  // The resume is a same-origin PDF, but it should still open in its own tab
+  // rather than replacing the page.
+  const external = href.startsWith("http") || href.endsWith(".pdf");
   return (
     <a
       href={href}

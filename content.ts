@@ -30,12 +30,17 @@ export const identity = {
   location: "NYC metro",
 };
 
+/** Lives at public/adithya-ganesh-resume.pdf. Swap the file to update the
+    resume; the filename is stable so existing links keep working. */
+export const RESUME_HREF = "/adithya-ganesh-resume.pdf";
+
 export const links: SiteLink[] = [
   { label: "GitHub", href: "https://github.com/Adithya1903" },
   { label: "GitHub (work)", href: "https://github.com/Sarvalabs-adithya" },
   { label: "LinkedIn", href: "https://linkedin.com/in/adithya-ganesh1" },
   { label: "X", href: "https://x.com/AdithyaGanesh_" },
   { label: "Email", href: "mailto:adithyaganesh9@gmail.com" },
+  { label: "Resume", href: RESUME_HREF },
 ];
 
 export const nav: SiteLink[] = [
