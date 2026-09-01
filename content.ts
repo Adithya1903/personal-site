@@ -25,6 +25,10 @@ export type CardItem = {
   meta: string;
   blurb: string;
   href: string | null;
+  /** Explicit preview image. YouTube links derive theirs from the href, so
+      this is only for everything else (an article's OG image, a paper's
+      first page). A row with no previews at all renders as text cards. */
+  image?: string;
 };
 
 export const SITE_URL = "https://adithya-site-orpin.vercel.app";
@@ -144,43 +148,150 @@ export const talks = {
   },
   items: [
     {
-      id: "community-calls",
-      title: "MOI Community Calls",
-      meta: "Webinar series · MOI Technology · 11 parts",
-      blurb:
-        "A recurring call walking the community through what shipped, what is next, and what the protocol looks like up close. 1,500+ cumulative views.",
-      href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
+      id: "call-1",
+      title: "MOI Community Call #1",
+      meta: "Community call · MOI Technology",
+      blurb: "Genesis. Rethinking the internet with contextual compute.",
+      href: "https://www.youtube.com/watch?v=wSDM1TG46dg",
     },
     {
-      id: "dev-talks",
-      title: "Weekly Dev Talks",
-      meta: "Webinar · MOI Technology · ongoing",
-      blurb:
-        "A standing weekly session for developers building on MOI, run live and published to the channel.",
-      href: "https://www.youtube.com/channel/UCit7h30bhrwxBd1Yt_bmPvg",
+      id: "call-2",
+      title: "MOI Community Call #2",
+      meta: "Community call · MOI Technology",
+      blurb: "Building together.",
+      href: "https://www.youtube.com/watch?v=-uNJdDzbMsY",
+    },
+    {
+      id: "call-3",
+      title: "MOI Community Call #3",
+      meta: "Community call · MOI Technology",
+      blurb: "Beta MainNet launch.",
+      href: "https://www.youtube.com/watch?v=pAsgczOnifI",
+    },
+    {
+      id: "call-4",
+      title: "MOI Community Call #4",
+      meta: "Community call · MOI Technology",
+      blurb: "Powering the network.",
+      href: "https://www.youtube.com/watch?v=-xNU2IPbfQU",
+    },
+    {
+      id: "call-5",
+      title: "MOI Community Call #5",
+      meta: "Community call · MOI Technology",
+      blurb: "The MOI winter upgrade.",
+      href: "https://www.youtube.com/watch?v=cQ67u_7mA7o",
+    },
+    {
+      id: "call-6",
+      title: "MOI Community Call #6",
+      meta: "Community call · MOI Technology",
+      blurb: "Community, builders, and onboarding momentum.",
+      href: "https://www.youtube.com/watch?v=LWXJdkY83Kk",
+    },
+    {
+      id: "call-7",
+      title: "MOI Community Call #7",
+      meta: "Community call · MOI Technology",
+      blurb: "ETH Denver recap, Forge updates, and new campaigns.",
+      href: "https://www.youtube.com/watch?v=jJ5Sp08_4dI",
+    },
+    {
+      id: "call-8",
+      title: "MOI Community Call #8",
+      meta: "Community call · MOI Technology",
+      blurb: "The agentic economy is here.",
+      href: "https://www.youtube.com/watch?v=yN952ghXOpk",
+    },
+    {
+      id: "call-9",
+      title: "MOI Community Call #9",
+      meta: "Community call · MOI Technology",
+      blurb: "Trust, swaps, and real use cases.",
+      href: "https://www.youtube.com/watch?v=oM0UAQ-aYUQ",
+    },
+    {
+      id: "call-13",
+      title: "MOI Community Call #13",
+      meta: "Community call · MOI Technology",
+      blurb: "Building in public.",
+      href: "https://www.youtube.com/watch?v=gcGZA9hNGpA",
+    },
+    {
+      id: "builder-2",
+      title: "Builder Series Episode 2",
+      meta: "Dev talk · MOI Technology",
+      blurb: "Native assets.",
+      href: "https://www.youtube.com/watch?v=mWzJZ5Vests",
+    },
+    {
+      id: "builder-3",
+      title: "Builder Series Episode 3",
+      meta: "Dev talk · MOI Technology",
+      blurb: "The agent registry.",
+      href: "https://www.youtube.com/watch?v=uNxsNdaTcGo",
+    },
+    {
+      id: "builder-4",
+      title: "Builder Series Episode 4",
+      meta: "Dev talk · MOI Technology",
+      blurb: "Swaps without liquidity pools.",
+      href: "https://www.youtube.com/watch?v=KLkMU5G5sHI",
+    },
+    {
+      id: "builder-5",
+      title: "Builder Series Episode 5",
+      meta: "Dev talk · MOI Technology",
+      blurb: "Vibe coding on MOI.",
+      href: "https://www.youtube.com/watch?v=L7Oe6R9ue54",
+    },
+    {
+      id: "builder-6",
+      title: "Builder Series Episode 6",
+      meta: "Dev talk · MOI Technology",
+      blurb: "Context inheritance.",
+      href: "https://www.youtube.com/watch?v=Pq56uIEaMY8",
+    },
+    {
+      id: "forge-1",
+      title: "MOI Forge Episode 1",
+      meta: "Forge session · MOI Technology",
+      blurb: "What is Sageo.",
+      href: "https://www.youtube.com/watch?v=Y8nVVA19rqw",
+    },
+    {
+      id: "forge-2",
+      title: "MOI Forge Episode 2",
+      meta: "Forge session · MOI Technology",
+      blurb: "Giving context.",
+      href: "https://www.youtube.com/watch?v=NNvM4OazRK0",
+    },
+    {
+      id: "forge-3",
+      title: "MOI Forge Episode 3",
+      meta: "Forge session · MOI Technology",
+      blurb: "A discussion on identity.",
+      href: "https://www.youtube.com/watch?v=3n1JNxSP0xA",
     },
     {
       id: "moi-hackathon",
       title: "MOI Hackathon",
       meta: "Event · 120 participants",
-      blurb:
-        "Ran the event end to end, and fed what builders hit during it back into the product roadmap.",
+      blurb: "Ran the event end to end, and fed what builders hit during it back into the product roadmap.",
       href: null,
     },
     {
       id: "solidity-course",
       title: "12-Week Solidity Course",
       meta: "Course · Boiler Blockchain, Purdue",
-      blurb:
-        "Designed and taught a technical curriculum to 100+ students, from first contract to deployment.",
+      blurb: "Designed and taught a technical curriculum to 100+ students, from first contract to deployment.",
       href: null,
     },
     {
       id: "ethdenver-2023",
       title: "ETH Denver 2023",
       meta: "Hackathon · 0x bounty winner",
-      blurb:
-        "Built and shipped LiquidEase over the event: single-sided liquidity provision routed through the 0x aggregator.",
+      blurb: "Built and shipped LiquidEase over the event: single-sided liquidity provision routed through the 0x aggregator.",
       href: null,
     },
     {
@@ -198,35 +309,38 @@ export const writing = {
     "Papers, specs, and the documentation I wrote for MOI. Five of the papers are sole-authored work on stablecoin collateral risk and options-based hedging.",
   items: [
     {
+      id: "webinars-vii",
+      title: "How AI Agents Pay Each Other",
+      meta: "Article · MOI Blog · 2026",
+      blurb: "Written up from MOI Webinars VII: what it actually takes for one autonomous agent to pay another.",
+      href: "https://blog.moi.technology/article/how-ai-agents-pay-each-other-moi/",
+    },
+    {
       id: "bima-white-paper",
       title: "Stablecoin Risk Mitigation White Paper",
       meta: "White paper · co-author, BIMA Labs · 2024",
-      blurb:
-        "Capital-allocation guidance built on a framework evaluating 70+ stablecoin, LST, and LRT protocols across collateral, peg mechanics, and liquidation logic, with Python and R hedging simulations.",
+      blurb: "Capital-allocation guidance built on a framework evaluating 70+ stablecoin, LST, and LRT protocols across collateral, peg mechanics, and liquidation logic.",
       href: null,
     },
     {
       id: "stiff-spec",
       title: "STiFF Enterprise Stablecoin Spec",
       meta: "Spec · co-author, MOI",
-      blurb:
-        "Branded stablecoin issuance and settlement at 80-90% lower cost than card networks.",
+      blurb: "Branded stablecoin issuance and settlement at 80-90% lower cost than card networks.",
       href: null,
     },
     {
       id: "coco-docs",
       title: "Coco Language Documentation",
       meta: "Documentation · MOI · ~50 pages",
-      blurb:
-        "Core documentation for Coco, MOI's smart contract language, written alongside the protocol architecture docs.",
+      blurb: "Core documentation for Coco, MOI's smart contract language, written alongside the protocol architecture docs.",
       href: "https://cocolang.dev",
     },
     {
       id: "moi-docs",
       title: "MOI Protocol Documentation",
       meta: "Documentation · MOI",
-      blurb:
-        "Protocol architecture documentation, the reference the developer on-ramp is built around.",
+      blurb: "Protocol architecture documentation, the reference the developer on-ramp is built around.",
       href: "https://docs.moi.technology",
     },
     {

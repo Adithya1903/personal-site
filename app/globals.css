@@ -57,11 +57,14 @@ article[id] {
 }
 
 /* Swipe rows: hide the horizontal scrollbar without losing the scroll itself.
-   The arrow buttons and native touch swipe are the affordance instead. */
-.no-scrollbar {
+   The arrow buttons and native touch swipe are the affordance instead.
+   overflow-anchor is off because scroll anchoring walks the track sideways as
+   the lazy card images load. */
+.swipe-row {
   scrollbar-width: none;
+  overflow-anchor: none;
 }
 
-.no-scrollbar::-webkit-scrollbar {
+.swipe-row::-webkit-scrollbar {
   display: none;
 }
