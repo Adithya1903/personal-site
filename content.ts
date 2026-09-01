@@ -111,7 +111,9 @@ export const projects: Project[] = [
       "The interactive app is complete: onboarding, balance and activity feed, send flow, a virtual card with freeze, and live yield accruing in real time. I’m now swapping the mocked layer for live integrations, starting with auth and the on-ramp.",
       "The question underneath it: what does stablecoin infrastructure look like when the user never has to know it’s there?",
     ],
-    links: [],
+    links: [
+      { label: "github.com/Adithya1903/Verde", href: "https://github.com/Adithya1903/Verde" },
+    ],
   },
   {
     id: "sprint",
@@ -142,7 +144,7 @@ export const projects: Project[] = [
 
 export const hackathons = {
   blurb:
-    "Two wins as a builder, one 120-person event as the organizer.",
+    "Two wins as a builder, a DoraHacks buidl, and a 120-person event as the organizer.",
   items: [
     {
       id: "hack-ethdenver-2023",
@@ -156,7 +158,16 @@ export const hackathons = {
       id: "hack-ethsf-2022",
       title: "ETHSanFrancisco 2022",
       meta: "Builder \u00b7 Triangle Best Social Use winner",
-      blurb: "Won the Triangle Best Social Use prize.",
+      blurb:
+        "Won with Tokenized Education: students earn ERC-1155 achievement tokens on Polygon for club and coursework, and professors recruit TAs and RAs from the token record. Built the ReactJS front end and helped ship the contracts.",
+      href: null,
+    },
+    {
+      id: "hack-koraline",
+      title: "Koraline",
+      meta: "Buidl \u00b7 Boiler Blockchain \u00b7 DoraHacks",
+      blurb:
+        "Decentralized event reservations with tiered ERC-1155 NFT ticketing on Polygon: auctions, buy-now, and no intermediaries between event owners and buyers. Built the ReactJS front end and helped ship the contracts.",
       href: null,
     },
     {
